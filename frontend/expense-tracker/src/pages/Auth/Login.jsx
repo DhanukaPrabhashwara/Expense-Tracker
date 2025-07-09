@@ -30,6 +30,14 @@ const Login = () => {
           placeholder="thomas@example.com"
           type="text"
         />
+
+        <Input
+          value={password}
+          onChange={({ target }) => setPassword(target.value)}
+          label="Password"
+          placeholder=""
+          type="password"
+        />
       </form>
       </div>
     </AuthLayout>
