@@ -10,9 +10,10 @@ const AuthLayout = ({ children }) => {
         </div>
 
         <div className="hidden md:block w-[40vw] h-screen bg-violet-50 bg-auth-bg-img bg-cover bg-no-repeat bg-center overflow-hidden p-8 relative">
-            <div className="w-48 h-48 rounded-[40px] bg-purple-600 absolute -top-7 -left-5" />
-            <div className="w-48 h-56 rounded-[40px] border-[20px] border-fuchsia-600 absolute top-[30%] -right-10" />
-            <div className="w-48 h-48 rounded-[40px] bg-violet-500 absolute -bottom-7 -left-5" />
+        <div className="absolute w-96 h-96 rounded-full bg-[radial-gradient(closest-side,_rgba(168,85,247,0)_30%,_rgba(147,51,234,0.4)_80%,_rgba(88,28,135,1))] top-1/3 left-1/4 -translate-x-1/2 -translate-y-1/2 opacity-60" />
+        <div className="absolute w-48 h-48 rounded-full bg-[radial-gradient(closest-side,_rgba(168,85,247,0)_30%,_rgba(147,51,234,0.4)_80%,_rgba(88,28,135,1))] top-4 right-2 opacity-60" />
+        <div className="absolute w-24 h-24 rounded-full bg-[radial-gradient(closest-side,_rgba(168,85,247,0)_30%,_rgba(147,51,234,0.4)_80%,_rgba(88,28,135,1))] top-64 right-12 opacity-60" />
+
 
             <div className="grid grid-cols-1 z-20">
                 <StatsInfoCard
