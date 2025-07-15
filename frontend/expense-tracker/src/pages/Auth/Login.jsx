@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import AuthLayout from "../../components/layouts/AuthLayout"
 import { useNavigate } from "react-router-dom";
 import Input from "../../components/Inputs/Input";
@@ -13,7 +13,23 @@ const Login = () => {
   const navigate = useNavigate();
 
   // Handle login form submission
-  const handleLogin = async (e) => {}
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    if (!password) {
+      setError("Please enter the password.");
+      return;
+    }
+
+    setError("");
+
+    //Login API call
+  }
 
   return (
     <AuthLayout>
