@@ -26,3 +26,21 @@ export const addThousandsSeparator = (num) => {
     ? `${formattedInteger}.${fractionalPart}`
     : formattedInteger;
 };
+
+export const prepareExpenseBarChartData = (data) => {
+  // Handle wrapped API responses like { expenses: [...] }
+  if (data && Array.isArray(data.expenses)) {
+    data = data.expenses;
+  }
+
+  // Defensive check: ensure we only map arrays
+  if (!Array.isArray(data)) {
+    console.error("prepareExpenseBarChartData expected an array, got:", data);
+    return [];
+  }
+
+  return data.map((item) => ({
+    category: item?.category ?? "Unknown",
+    amount: item?.amount ?? 0,
+  }));
+};
