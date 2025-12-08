@@ -27,12 +27,12 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
 
   const fetchDashboardData = async () => {
-    if (loading) return;
 
     setLoading(true);
 
     try {
       const response = await axiosInstance.get(`${API_PATHS.DASHBOARD.GET_DATA}`);
+      console.log("Dashboard response:", response.data);
 
       if (response.data) {
         setDashboardData(response.data);
