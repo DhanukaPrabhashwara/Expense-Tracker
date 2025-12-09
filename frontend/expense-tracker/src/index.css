@@ -33,3 +33,83 @@
 .card-btn {
     @apply flex items-center gap-3 text-[12px] font-medium text-gray-700 hover:text-purple-500 bg-gray-50 hover:bg-purple-50 px-4 py-1.5 rounded-lg border border-gray-200/50 cursor-pointer;
 }
+
+/* Button base */
+.add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border: 1px solid #6f43e0; /* visible default border */
+  border-radius: 0.5rem;
+  font-size: 0.95rem;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 120ms ease, box-shadow 120ms ease, background-color 160ms ease, opacity 120ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Filled primary */
+.add-btn.add-btn-fill {
+  background-color: #875cf5;
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(135, 92, 245, 0.12);
+  border-color: transparent; /* hide border for filled variant */
+}
+
+.add-btn.add-btn-fill:hover {
+  background-color: #6f43e0;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(135, 92, 245, 0.14);
+}
+
+.add-btn.add-btn-fill:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 12px rgba(135, 92, 245, 0.12);
+}
+
+/* Outline variant (optional) */
+.add-btn.add-btn-outline {
+  background: transparent;
+  color: #875cf5;
+  border-color: #875cf5;
+  box-shadow: none;
+}
+
+.add-btn.add-btn-outline:hover {
+  background: rgba(135,92,245,0.06);
+  transform: translateY(-1px);
+}
+
+/* Focus (accessibility) */
+.add-btn:focus,
+.add-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(135, 92, 245, 0.14);
+}
+
+/* Disabled state */
+.add-btn:disabled,
+.add-btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Small / responsive tweak */
+@media (max-width: 640px) {
+  .add-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.92rem;
+  }
+}
+
+/* Optional: icon sizing inside button */
+.add-btn svg {
+  width: 1.05rem;
+  height: 1.05rem;
+  display: inline-block;
+  vertical-align: middle;
+}
